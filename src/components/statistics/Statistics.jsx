@@ -1,12 +1,12 @@
-// import dataInfo from "../../folders_data/data.json/data.json";
-import css from './data.module.css';
+
+import css from './statistics.module.css';
 import PropTypes from 'prop-types';
 import hexColorRandom from '../contains/hexcolorrandom.js';
 
-export const Data = ({ title, items }) => {
+export const Statistics = ({ title, items }) => {
   return (
     <section className={css.statistics}>
-      <h2 className={css.title}>{title}</h2>
+      <h2 className={css.title}>{title ? title : '' }</h2>
 
       <ul className={css.stat_list}>
         {items.map(({ id, label, percentage }) => (
@@ -24,13 +24,13 @@ export const Data = ({ title, items }) => {
   );
 };
 
-Data.propTypes = {
+Statistics.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.exact({
-      id: PropTypes.string,
-      label: PropTypes.string,
-      percentage: PropTypes.number,
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
     })
   ),
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
 };

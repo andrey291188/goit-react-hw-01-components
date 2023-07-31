@@ -1,5 +1,5 @@
 import React from 'react';
-import { Data } from '../components/data/Data.jsx';
+import { Statistics } from './statistics/Statistics.jsx';
 import { Friends } from '../components/friends/Friends.jsx';
 import { Transactions } from '../components/transactions/Transactions.jsx';
 import { Profile } from '../components/user/Profile.jsx';
@@ -13,13 +13,9 @@ export const App = () => {
   return (
     <>
       <Profile
-        username={user.username}
-        tag={user.tag}
-        location={user.location}
-        avatar={user.avatar}
-        stats={user.stats}
+       user={user}
       />
-      <Data 
+      <Statistics 
       title="Upload stats" 
       items={dataInfo} 
       />
