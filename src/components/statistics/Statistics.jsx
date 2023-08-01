@@ -6,8 +6,8 @@ import hexColorRandom from '../contains/hexcolorrandom.js';
 export const Statistics = ({ title, items }) => {
   return (
     <section className={css.statistics}>
-      <h2 className={css.title}>{title ? title : '' }</h2>
-
+      {title && <h2 className={css.title}>{title}</h2>}
+ 
       <ul className={css.stat_list}>
         {items.map(({ id, label, percentage }) => (
           <li
@@ -26,11 +26,11 @@ export const Statistics = ({ title, items }) => {
 
 Statistics.propTypes = {
   items: PropTypes.arrayOf(
-    PropTypes.exact({
+    PropTypes.shape({
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
     })
   ),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 };

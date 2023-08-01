@@ -19,6 +19,10 @@ export const App = () => {
       title="Upload stats" 
       items={dataInfo} 
       />
+       <Statistics 
+      
+      items={dataInfo} 
+      />
       <Friends friends={dataFriends}/>
       <Transactions items={dataTransactions}/>
     </>
